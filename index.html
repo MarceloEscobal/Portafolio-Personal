@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Premium Minimalist</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            900: '#030712', // Very dark black-blue
+                            800: '#0F172A', // Slate 900
+                            700: '#1E293B', // Slate 800
+                        },
+                        accent: {
+                            500: '#3B82F6', // Blue 500
+                            400: '#60A5FA', // Blue 400
+                            300: '#93C5FD', // Blue 300
+                            cyan: '#06B6D4', // Cyan 500
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        display: ['Chakra Petch', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'gradient-text': 'linear-gradient(to right, #60A5FA, #06B6D4)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateX(var(--tw-translate-x, 0)) translateY(0)' },
+                            '50%': { transform: 'translateX(var(--tw-translate-x, 0)) translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body
+    class="bg-dark-900 text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-accent-500/30 selection:text-white relative">
+
+    <!-- Background Gradients (Glows) -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div
+            class="absolute -top-[20%] -left-[10%] w-[50vw] h-[50vw] rounded-full bg-accent-500/10 mix-blend-screen filter blur-[120px] animate-pulse-slow">
+        </div>
+        <div class="absolute top-[40%] -right-[20%] w-[60vw] h-[60vw] rounded-full bg-accent-cyan/10 mix-blend-screen filter blur-[150px] animate-pulse-slow"
+            style="animation-delay: 2s;"></div>
+        <div class="absolute -bottom-[20%] left-[20%] w-[50vw] h-[50vw] rounded-full bg-blue-600/10 mix-blend-screen filter blur-[120px] animate-pulse-slow"
+            style="animation-delay: 4s;"></div>
+    </div>
+
+    <!-- Soft Grain Overlay -->
+    <div class="noise fixed inset-0 pointer-events-none z-0 opacity-[0.03]"></div>
+
+
+
+    <!-- Main Container -->
+    <main
+        class="relative z-10 w-full xl:max-w-[1600px] 2xl:max-w-[1800px] mx-auto px-6 sm:px-12 md:px-20 lg:px-24 py-12 md:py-24 pt-24 space-y-32">
+
+        <!-- Navbar (Top Tech) -->
+        <header
+            class="fixed top-0 left-0 w-full z-40 bg-dark-900/90 backdrop-blur-xl py-4 px-6 md:px-12 lg:px-24 flex flex-col sm:flex-row justify-between items-center gap-4 fade-in-up">
+            <!-- Gradient Bottom Border -->
+            <div
+                class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent-cyan/50 to-transparent">
+            </div>
+
+            <a href="#"
+                class="group flex items-center gap-3 text-xl md:text-2xl font-display font-bold text-white tracking-wide">
+                <span
+                    class="flex items-center justify-center w-8 h-8 rounded-lg bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan text-sm group-hover:bg-accent-cyan group-hover:text-dark-900 transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                </span>
+                Marcelo <span class="text-transparent bg-clip-text bg-gradient-text">Escobal Tiznado</span>
+            </a>
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="https://wa.me/959007619" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] text-sm font-medium hover:bg-[#25D366]/20 transition-all backdrop-blur-md">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 3.825 0 6.938 3.112 6.938 6.937-.001 3.824-3.113 6.936-6.938 6.943z" />
+                    </svg>
+                    WhatsApp
+                </a>
+                <a href="https://github.com/MarceloEscobal" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-dark-800 border border-white/10 text-slate-300 text-sm font-medium hover:bg-white/10 hover:text-white transition-all backdrop-blur-md">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.699-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.416 22 12c0-5.523-4.477-10-10-10z"></path>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[75vh] flex flex-col justify-center relative">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center w-full">
+                <!-- Left: Typography -->
+                <div
+                    class="lg:col-span-6 flex flex-col justify-center order-2 lg:order-1 relative z-10 w-full xl:pr-12">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-dark-800/80 border border-accent-cyan/30 text-accent-cyan text-sm font-mono w-max mb-10 backdrop-blur-md fade-in-up"
+                        style="animation-delay: 0.1s;">
+                        <span class="w-2 h-2 rounded-full bg-accent-cyan shadow-[0_0_8px_#06B6D4] animate-pulse"></span>
+                        Status: Disponible para trabajo_
+                    </div>
+
+                    <h1 class="font-display font-bold text-6xl sm:text-7xl lg:text-[7.5rem] leading-[1] tracking-tight text-white mb-8 fade-in-up"
+                        style="animation-delay: 0.2s;">
+                        Creando código <br class="hidden xl:block">
+                        <span class="text-transparent bg-clip-text bg-gradient-text block mt-2">digital
+                            único.</span>
+                    </h1>
+
+                    <p class="font-sans text-xl lg:text-3xl text-slate-400 w-full mb-12 leading-relaxed font-light fade-in-up tracking-wide"
+                        style="animation-delay: 0.3s;">
+                        Desarrollador Full-Stack especializado en
+                        arquitecturas modernas e interfaces técnicas.
+                        Construyendo productos excepcionales.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-6 fade-in-up font-sans mt-4"
+                        style="animation-delay: 0.4s;">
+                        <a href="#projects"
+                            class="touch-target inline-flex items-center justify-center px-10 py-4 rounded-xl bg-gradient-to-r from-accent-500 to-accent-cyan text-white font-semibold text-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:scale-[1.02] transition-all duration-300">
+                            Explorar Proyectos
+                        </a>
+                        <a href="#about"
+                            class="touch-target inline-flex items-center justify-center px-10 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-md">
+                            Sobre Mí
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Tech/Code Elements (Dual Window) -->
+                <div class="lg:col-span-6 flex justify-center items-center order-1 lg:order-2 fade-in-up mt-8 lg:mt-0"
+                    style="animation-delay: 0.5s;">
+                    <div class="relative w-full max-w-lg aspect-square lg:aspect-[4/3]">
+
+                        <!-- Main Window (IDE) -->
+                        <div
+                            class="absolute top-0 right-0 w-4/5 h-4/5 rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] group animate-float bg-dark-800 z-10">
+                            <!-- IDE/Code Window Header -->
+                            <div
+                                class="absolute top-0 inset-x-0 h-8 bg-dark-900/50 backdrop-blur-md border-b border-white/5 flex items-center px-4 gap-2 z-20">
+                                <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
+                                <span
+                                    class="ml-4 text-[10px] font-mono text-slate-500 flex-1 text-center pr-10">sys.config.ts</span>
+                            </div>
+
+                            <!-- Tech Image Background -->
+                            <div
+                                class="absolute inset-0 pt-8 bg-dark-800 flex items-center justify-center overflow-hidden">
+                                <div class="absolute inset-0 bg-gradient-to-tr from-accent-500/10 to-transparent z-10">
+                                </div>
+                                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
+                                    class="w-full h-full object-cover opacity-50 group-hover:scale-105 group-hover:opacity-70 transition-all duration-700 mix-blend-luminosity"
+                                    alt="Code and Development">
+
+                                <!-- Floating Tech Badge -->
+                                <div
+                                    class="absolute top-1/4 left-1/4 px-3 py-1.5 rounded-lg bg-dark-900/90 backdrop-blur-md border border-white/10 text-accent-cyan font-mono text-xs shadow-xl z-20 transform -translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500">
+                                    <span class="text-slate-400">const</span> <span class="text-white">dev</span> =
+                                    <span class="text-accent-300">"100%"</span>;
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Window (Terminal) -->
+                        <div
+                            class="absolute bottom-0 left-0 w-2/3 h-3/5 rounded-2xl overflow-hidden border border-accent-cyan/20 shadow-[0_20px_40px_rgba(0,0,0,0.8)] animate-float-delayed bg-dark-900 z-20">
+                            <!-- Terminal Header -->
+                            <div
+                                class="absolute top-0 inset-x-0 h-8 bg-dark-800/80 backdrop-blur-md border-b border-white/5 flex items-center px-4">
+                                <span class="text-[10px] font-mono text-slate-400">root@server:~</span>
+                            </div>
+                            <!-- Terminal Content -->
+                            <div
+                                class="absolute inset-0 pt-10 px-4 pb-4 bg-dark-900/95 font-mono text-[11px] sm:text-xs text-slate-300 flex flex-col gap-1.5 overflow-hidden">
+                                <p><span class="text-accent-cyan">~</span> $ npm run deploy</p>
+                                <p class="text-green-400">> building premium bundle...</p>
+                                <p class="text-slate-500">[✓] compiled client-side in 842ms</p>
+                                <p class="text-slate-500">[✓] server endpoints mapped</p>
+                                <p class="text-accent-400 animate-pulse mt-2">Server live on production port_</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bento Grid Projects Section -->
+        <section id="projects" class="pt-16">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 reveal">
+                <div>
+                    <h2 class="font-display font-bold text-4xl md:text-5xl text-white mb-4">Trabajos Destacados</h2>
+                    <div class="w-24 h-1 bg-gradient-text rounded-full"></div>
+                </div>
+                <p class="text-slate-400 max-w-md md:text-right">
+                    Una selección de mis proyectos combinando diseño, innovación y tecnología de vanguardia.
+                </p>
+            </div>
+
+            <!-- Sleek Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[320px]">
+
+                <!-- Project 1 (Large Image) -->
+                <a href="https://plataforma-de-streaming-red.vercel.app/" target="_blank" rel="noopener noreferrer"
+                    class="block touch-target group relative lg:col-span-2 row-span-2 rounded-2xl md:rounded-3xl overflow-hidden bg-dark-800 border border-white/10 hover:border-accent-500/30 transition-colors reveal cursor-pointer shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+                    <img src="./streaming-monkey.png"
+                        class="absolute inset-0 w-full h-full object-cover object-top opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105"
+                        alt="Streaming Monkey - Plataforma">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/70 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 md:p-10 w-full flex flex-col justify-end h-full">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 rounded-full bg-dark-900/60 backdrop-blur-md text-white/90 text-xs font-medium border border-white/10">Next.js</span>
+                            <span
+                                class="px-3 py-1 rounded-full bg-dark-900/60 backdrop-blur-md text-white/90 text-xs font-medium border border-white/10">Tailwind CSS</span>
+                            <span
+                                class="px-3 py-1 rounded-full bg-dark-900/60 backdrop-blur-md text-white/90 text-xs font-medium border border-white/10">Supabase</span>
+                            <span
+                                class="px-3 py-1 rounded-full bg-dark-900/60 backdrop-blur-md text-slate-300 text-xs font-medium border border-white/10">HTML/CSS</span>
+                        </div>
+                        <h3
+                            class="font-display text-3xl md:text-4xl font-bold text-white mb-3 group-hover:text-[#FA538C] transition-colors">
+                            Streaming Monkey</h3>
+                        <p
+                            class="text-slate-300 max-w-lg mb-6 opacity-80 group-hover:opacity-100 transform group-hover:-translate-y-1 transition-all duration-500">
+                            Plataforma de venta de cuentas de streaming rentables. Todo el entretenimiento en la palma de tu mano con acceso inmediato, seguro y al mejor precio.
+                        </p>
+                        <div
+                            class="inline-flex items-center gap-2 text-white font-medium w-max opacity-80 group-hover:opacity-100 transition-opacity duration-500 delay-100 group-hover:text-[#FA538C]">
+                            Ver Plataforma Web <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Project 2 (Panadería Artesanal) -->
+                <a href="https://panaderia-artesanal.vercel.app/" target="_blank" rel="noopener noreferrer"
+                    class="block touch-target group relative rounded-2xl md:rounded-3xl overflow-hidden bg-dark-800 border border-white/10 hover:border-[#D4A373]/40 transition-colors reveal cursor-pointer shadow-[0_4px_30px_rgba(0,0,0,0.5)] flex flex-col justify-end min-h-[320px]">
+                    <img src="./panaderia.png"
+                        class="absolute inset-0 w-full h-full object-cover object-center opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105"
+                        alt="Panadería Artesanal El Trigo de Oro">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/80 to-transparent"></div>
+                    <div class="relative z-10 p-6 md:p-8 w-full flex flex-col justify-end">
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="px-2 py-0.5 rounded border border-[#D4A373]/30 bg-[#D4A373]/10 text-[#D4A373] text-[10px] font-medium tracking-wide">React</span>
+                            <span class="px-2 py-0.5 rounded border border-[#D4A373]/30 bg-[#D4A373]/10 text-[#D4A373] text-[10px] font-medium tracking-wide">Tailwind CSS</span>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-2 group-hover:text-[#D4A373] transition-colors">Panadería Artesanal</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                            Landing page cálida y moderna para panadería. Diseño responsivo enfocado en la presentación de productos.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Project 3 -->
+                <article
+                    class="touch-target group relative rounded-2xl md:rounded-3xl overflow-hidden bg-dark-800 border border-white/10 p-8 flex flex-col justify-between reveal cursor-pointer">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-accent-500/10 rounded-full filter blur-[40px] group-hover:bg-accent-500/20 transition-colors">
+                    </div>
+                    <div
+                        class="relative z-10 w-12 h-12 rounded-full bg-white/5 text-slate-300 flex items-center justify-center mb-6 group-hover:scale-110 transition-all border border-white/10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="relative z-10">
+                        <span
+                            class="text-accent-300 text-sm font-semibold tracking-wider uppercase mb-2 block">Aplicación
+                            Web</span>
+                        <h3 class="font-display text-2xl font-bold text-white mb-2">Portal Web3</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Interfaz de minting e integración con
+                            contratos inteligentes.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Dynamic Tech Stack Array -->
+        <section id="about" class="pt-16 reveal relative">
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-16 text-center">Stack & Herramientas
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
+                
+                <!-- Frontend & UI -->
+                <div class="bg-dark-800/50 backdrop-blur-sm border border-white/5 rounded-2xl p-6 hover:border-accent-cyan/30 transition-colors">
+                    <h3 class="text-accent-cyan font-mono text-sm mb-4 border-b border-white/5 pb-2">01. Frontend_</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">React</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Next.js</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Angular</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">TypeScript</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">JavaScript</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Tailwind CSS</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Bootstrap</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">HTML5 / CSS3</span>
+                    </div>
+                </div>
+
+                <!-- Backend & Core -->
+                <div class="bg-dark-800/50 backdrop-blur-sm border border-white/5 rounded-2xl p-6 hover:border-accent-500/30 transition-colors">
+                    <h3 class="text-accent-500 font-mono text-sm mb-4 border-b border-white/5 pb-2">02. Backend_</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Node.js</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">NestJS</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Python</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Java / Spring Boot</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">PHP / Laravel</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">RESTful APIs</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">GraphQL</span>
+                    </div>
+                </div>
+
+                <!-- Bases de Datos -->
+                <div class="bg-dark-800/50 backdrop-blur-sm border border-white/5 rounded-2xl p-6 hover:border-accent-300/30 transition-colors">
+                    <h3 class="text-accent-300 font-mono text-sm mb-4 border-b border-white/5 pb-2">03. Datos_</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">PostgreSQL</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">MySQL</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Firebase / Supabase</span>
+                    </div>
+                </div>
+
+                <!-- DevOps & Cloud -->
+                <div class="bg-dark-800/50 backdrop-blur-sm border border-white/5 rounded-2xl p-6 hover:border-[#25D366]/30 transition-colors">
+                    <h3 class="text-[#25D366] font-mono text-sm mb-4 border-b border-white/5 pb-2">04. DevOps & Nube_</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Docker</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Kubernetes</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Google Cloud</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Azure</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Vercel</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">GitHub</span>
+                    </div>
+                </div>
+
+                <!-- Arquitectura & Testing -->
+                <div class="bg-dark-800/50 backdrop-blur-sm border border-white/5 rounded-2xl p-6 hover:border-accent-400/30 transition-colors">
+                    <h3 class="text-accent-400 font-mono text-sm mb-4 border-b border-white/5 pb-2">05. Ingeniería_</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Microservicios</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Arquitectura Hexagonal</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Clean Architecture</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">SOLID Principles</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Design Patterns</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Jest / Vitest</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Cypress / Selenium</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">TDD / BDD</span>
+                    </div>
+                </div>
+
+                <!-- Diseño & Planeación -->
+                <div class="bg-dark-800/50 backdrop-blur-sm border border-white/5 rounded-2xl p-6 hover:border-white/30 transition-colors">
+                    <h3 class="text-white font-mono text-sm mb-4 border-b border-white/5 pb-2">06. Diseño & Gestión_</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Figma</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Adobe XD</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">UI/UX Design</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Prototipado interactivo</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Design Systems</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Scrum / Agile</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Jira / Trello</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Notion</span>
+                        <span class="px-3 py-1.5 rounded-md bg-dark-900 border border-white/10 text-slate-300 text-xs font-medium">Git / GitHub / GitLab</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Certificaciones Section -->
+        <section id="certifications" class="pt-12 fade-in-up">
+            <h2 class="font-display font-bold text-3xl md:text-4xl text-white mb-16 text-center">
+                Certificaciones <span class="text-transparent bg-clip-text bg-gradient-text">& Logros</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Certificado 1 (Ponente) -->
+                <div class="group relative rounded-2xl md:rounded-3xl overflow-hidden bg-dark-800 border border-white/10 hover:border-accent-cyan/40 transition-all duration-500 shadow-xl cursor-pointer">
+                    <img src="./certificado-1.png" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" alt="Certificado UPAO Ponente">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-dark-900 via-dark-900/90 to-transparent p-6 pt-12 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                            <span class="px-2 py-0.5 rounded border border-accent-cyan/30 bg-accent-cyan/10 text-accent-cyan text-[10px] font-medium tracking-wide">Ponente</span>
+                            <span class="px-2 py-0.5 rounded border border-accent-cyan/30 bg-accent-cyan/10 text-accent-cyan text-[10px] font-medium tracking-wide">Inteligencia Artificial</span>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-1 group-hover:text-accent-cyan transition-colors">Sistema Web con ACO y GraphSAGE</h3>
+                        <p class="text-slate-300 text-sm">Semana Tecnológica UPAO (Oct. 2025)</p>
+                    </div>
+                </div>
+
+                <!-- Certificado 2 (Inglés) -->
+                <div class="group relative rounded-2xl md:rounded-3xl overflow-hidden bg-dark-800 border border-white/10 hover:border-[#F4C542]/40 transition-all duration-500 shadow-xl cursor-pointer">
+                    <img src="./certificado-2.png" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" alt="Certificado Advanced English Level">
+                    <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-dark-900 via-dark-900/90 to-transparent p-6 pt-12 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <div class="flex items-center gap-2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                            <span class="px-2 py-0.5 rounded border border-[#F4C542]/30 bg-[#F4C542]/10 text-[#F4C542] text-[10px] font-medium tracking-wide">Idioma</span>
+                            <span class="px-2 py-0.5 rounded border border-[#F4C542]/30 bg-[#F4C542]/10 text-[#F4C542] text-[10px] font-medium tracking-wide">Bilingüe</span>
+                        </div>
+                        <h3 class="font-display text-xl font-bold text-white mb-1 group-hover:text-[#F4C542] transition-colors">Advanced English Level</h3>
+                        <p class="text-slate-300 text-sm">UPAO Language Centre (Abr. 2025)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Minimalist Contact Section -->
+        <section id="contact" class="pb-24 pt-16 reveal">
+            <div
+                class="relative rounded-[2rem] bg-gradient-to-b from-dark-800/80 to-dark-900 border border-white/10 p-12 md:p-24 text-center overflow-hidden">
+                <!-- Background Accent inside contact -->
+                <div
+                    class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-500/50 to-transparent">
+                </div>
+
+                <h2 class="relative z-10 font-display font-bold text-4xl md:text-6xl text-white mb-6">
+                    ¿Tienes una idea en mente?
+                </h2>
+                <p class="relative z-10 text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+                    Estoy constantemente buscando nuevos retos y proyectos emocionantes. Escríbeme y hagámoslo realidad.
+                </p>
+
+                <div class="relative z-10 flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a href="https://wa.me/959007619" target="_blank" rel="noopener noreferrer"
+                        class="touch-target inline-flex items-center justify-center px-10 py-5 rounded-xl bg-white text-dark-900 font-semibold text-lg hover:bg-slate-200 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                        Enviar un Mensaje
+                    </a>
+                    <a href="https://www.linkedin.com/in/marcelo-escobal-tiznado/" target="_blank" rel="noopener noreferrer"
+                        class="touch-target inline-flex items-center justify-center gap-3 px-8 py-5 rounded-xl text-white font-medium hover:text-accent-400 transition-colors">
+                        Ver LinkedIn <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <footer class="mt-16 text-center text-slate-500 text-sm">
+                <p>&copy; 2026 Asrock. Todos los derechos reservados.</p>
+            </footer>
+        </section>
+
+        <!-- Spacer for mobile nav -->
+        <div class="h-24 sm:hidden"></div>
+
+    </main>
+
+    <!-- Glassmorphism Floating Navigation -->
+    <nav id="nav"
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-in-out w-[calc(100%-2rem)] sm:w-auto max-w-lg animate-float">
+
+        <!-- Mobile Toggle Button -->
+        <button id="nav-toggle"
+            class="sm:hidden w-full touch-target bg-dark-800/80 backdrop-blur-xl border border-white/10 rounded-2xl px-6 py-4 flex items-center justify-between text-white font-medium shadow-[0_10px_30px_rgba(0,0,0,0.5)] active:scale-95 transition-all">
+            <span>Navegación</span>
+            <svg id="nav-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+
+        <!-- Nav Content -->
+        <div id="nav-content"
+            class="absolute bottom-full left-0 w-full mb-2 sm:mb-0 sm:relative sm:bottom-auto sm:left-auto sm:w-auto transition-all duration-300 origin-bottom sm:scale-100 sm:opacity-100 opacity-0 scale-95 pointer-events-none sm:pointer-events-auto">
+            <ul
+                class="flex flex-col sm:flex-row items-center justify-center bg-dark-800/80 backdrop-blur-xl border border-white/10 rounded-3xl sm:rounded-full p-2 py-3 sm:py-2 px-3 sm:px-4 shadow-[0_10px_30px_rgba(0,0,0,0.5)] gap-2 sm:gap-4 w-full">
+                <li class="w-full sm:w-auto text-center"><a href="#home"
+                        class="touch-target nav-link flex w-full justify-center px-4 py-3 sm:py-2.5 rounded-xl sm:rounded-full text-slate-300 text-sm font-medium hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">Inicio</a>
+                </li>
+                <li class="w-full sm:w-auto text-center"><a href="#projects"
+                        class="touch-target nav-link flex w-full justify-center px-4 py-3 sm:py-2.5 rounded-xl sm:rounded-full text-slate-300 text-sm font-medium hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">Proyectos</a>
+                </li>
+                <li class="w-full sm:w-auto text-center"><a href="#about"
+                        class="touch-target nav-link flex w-full justify-center px-4 py-3 sm:py-2.5 rounded-xl sm:rounded-full text-slate-300 text-sm font-medium hover:text-white hover:bg-white/5 transition-colors whitespace-nowrap">Sobre
+                        Mí</a></li>
+                <li class="w-full sm:w-auto"><a href="#contact"
+                        class="touch-target nav-link flex w-full justify-center px-6 py-3 sm:py-2.5 rounded-xl sm:rounded-full text-white bg-accent-500/20 border border-accent-500/30 font-medium hover:bg-accent-500/30 transition-colors whitespace-nowrap sm:ml-2">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Background overlay -->
+    <div id="nav-overlay"
+        class="fixed inset-0 bg-dark-900/80 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300 sm:hidden">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
