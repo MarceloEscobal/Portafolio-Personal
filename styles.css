@@ -66,3 +66,36 @@ html {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
+
+/* Floating Animation for Background Icons */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-20px) rotate(2deg);
+    }
+    66% {
+        transform: translateY(10px) rotate(-2deg);
+    }
+}
+
+.animate-float {
+    animation: float 10s ease-in-out infinite;
+}
+
+/* Custom Pulse Animation */
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 0.1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.15;
+        transform: scale(1.1);
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 8s ease-in-out infinite;
+}
