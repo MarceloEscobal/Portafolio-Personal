@@ -204,4 +204,95 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 6. Interactive Project Scroll Indicator
+    const projectsViewport = document.getElementById('projects-viewport');
+    const scrollIndicator = document.getElementById('scroll-indicator');
+    const scrollTrack = document.getElementById('scroll-track');
+
+    if (projectsViewport && scrollIndicator && scrollTrack) {
+        let isDragging = false;
+        let startX;
+        let startScrollLeft;
+
+        // Function to update indicator based on viewport scroll
+        const updateIndicator = () => {
+            if (isDragging) return;
+            const scrollWidth = projectsViewport.scrollWidth - projectsViewport.clientWidth;
+            const scrollLeft = projectsViewport.scrollLeft;
+            const progress = (scrollLeft / scrollWidth); // 0 to 1
+            const leftRange = (scrollTrack.clientWidth - scrollIndicator.clientWidth) / scrollTrack.clientWidth * 100;
+            scrollIndicator.style.left = `${progress * leftRange}%`;
+        };
+
+
+        projectsViewport.addEventListener('scroll', updateIndicator);
+
+        // Click on track to jump
+        scrollTrack.addEventListener('click', (e) => {
+            if (e.target === scrollIndicator) return;
+            const rect = scrollTrack.getBoundingClientRect();
+            const clickPos = (e.clientX - rect.left) / rect.width;
+            const scrollWidth = projectsViewport.scrollWidth - projectsViewport.clientWidth;
+            projectsViewport.scrollLeft = clickPos * scrollWidth;
+        });
+
+        // Dragging logic
+        const startDragging = (e) => {
+            isDragging = true;
+            startX = e.pageX || e.touches[0].pageX;
+            startScrollLeft = projectsViewport.scrollLeft;
+            scrollIndicator.style.transition = 'none';
+            scrollIndicator.classList.add('cursor-grabbing');
+            document.body.classList.add('select-none');
+        };
+
+        const stopDragging = () => {
+            if (!isDragging) return;
+            isDragging = false;
+            scrollIndicator.style.transition = '';
+            scrollIndicator.classList.remove('cursor-grabbing');
+            document.body.classList.remove('select-none');
+        };
+
+        const moveDragging = (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX || e.touches[0].pageX;
+            const walk = (x - startX) * (projectsViewport.scrollWidth / scrollTrack.clientWidth);
+            projectsViewport.scrollLeft = startScrollLeft + walk;
+
+            // Manual indicator update during drag
+            const scrollWidth = projectsViewport.scrollWidth - projectsViewport.clientWidth;
+            const progress = (projectsViewport.scrollLeft / scrollWidth);
+            const leftRange = (scrollTrack.clientWidth - scrollIndicator.clientWidth) / scrollTrack.clientWidth * 100;
+            scrollIndicator.style.left = `${Math.min(leftRange, Math.max(0, progress * leftRange))}%`;
+        };
+
+        scrollIndicator.addEventListener('mousedown', startDragging);
+        scrollIndicator.addEventListener('touchstart', startDragging);
+
+        window.addEventListener('mousemove', moveDragging);
+        window.addEventListener('touchmove', moveDragging);
+
+        window.addEventListener('mouseup', stopDragging);
+        window.addEventListener('touchend', stopDragging);
+
+        // Arrow Button Navigation
+        const btnLeft = document.getElementById('scroll-left');
+        const btnRight = document.getElementById('scroll-right');
+
+        if (btnLeft && btnRight) {
+            btnLeft.addEventListener('click', () => {
+                projectsViewport.scrollBy({ left: -400, behavior: 'smooth' });
+            });
+            btnRight.addEventListener('click', () => {
+                projectsViewport.scrollBy({ left: 400, behavior: 'smooth' });
+            });
+        }
+    }
 });
+
+
+
+

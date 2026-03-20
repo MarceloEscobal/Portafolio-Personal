@@ -312,95 +312,127 @@
                 </p>
             </div>
 
-            <!-- Sleek Bento Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[320px]">
+            <!-- Horizontal Scroll Container (Removed 'group' to prevent collective hover) -->
+            <div class="relative">
+                <div class="overflow-x-auto pb-6 snap-x snap-mandatory scroll-smooth hide-scrollbar" id="projects-viewport">
+                    <div class="flex gap-8 w-max min-w-full px-4 md:px-0">
+                        <!-- Content remains same -->
+                        <!-- ... -->
 
-                <!-- Project 1 (Large Image) -->
-                <a href="https://plataforma-de-streaming-red.vercel.app/" target="_blank" rel="noopener noreferrer"
-                    class="block touch-target group relative lg:col-span-2 row-span-2 rounded-2xl md:rounded-3xl overflow-hidden bg-dark-800 border border-white/10 hover:border-accent-500/30 transition-colors reveal cursor-pointer shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
-                    <img src="./streaming-monkey.png"
-                        class="absolute inset-0 w-full h-full object-cover object-top opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105"
-                        alt="Streaming Monkey - Plataforma">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/70 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-8 md:p-10 w-full flex flex-col justify-end h-full">
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span
-                                class="px-3 py-1 rounded-full bg-dark-900/60 backdrop-blur-md text-white/90 text-xs font-medium border border-white/10">Next.js</span>
-                            <span
-                                class="px-3 py-1 rounded-full bg-dark-900/60 backdrop-blur-md text-white/90 text-xs font-medium border border-white/10">Tailwind
-                                CSS</span>
-                            <span
-                                class="px-3 py-1 rounded-full bg-dark-900/60 backdrop-blur-md text-white/90 text-xs font-medium border border-white/10">Supabase</span>
-                            <span
-                                class="px-3 py-1 rounded-full bg-dark-900/60 backdrop-blur-md text-slate-300 text-xs font-medium border border-white/10">HTML/CSS</span>
+                        <!-- Content remains same -->
+                        <!-- ... (Restored Bento Block and P4) ... -->
+
+                        
+                        <!-- Block 1: Original Bento Grid (Projects 1, 2, 3) -->
+                        <div class="flex-none w-full max-w-[1400px] snap-start">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[320px]">
+                                <!-- Project 1 (Large Image) -->
+                                <a href="https://plataforma-de-streaming-red.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                    class="block touch-target group relative lg:col-span-2 row-span-2 rounded-2xl md:rounded-3xl overflow-hidden bg-dark-800 border border-white/10 hover:border-accent-500/30 transition-colors reveal cursor-pointer shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+                                    <img src="./streaming-monkey.png"
+                                        class="absolute inset-0 w-full h-full object-cover object-top opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105"
+                                        alt="Streaming Monkey - Plataforma">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/70 to-transparent"></div>
+                                    <div class="absolute bottom-0 left-0 p-8 md:p-10 w-full flex flex-col justify-end h-full">
+                                        <div class="flex flex-wrap gap-2 mb-4">
+                                            <span class="px-3 py-1 rounded-full bg-dark-900/60 backdrop-blur-md text-white/90 text-xs font-medium border border-white/10">Next.js</span>
+                                            <span class="px-3 py-1 rounded-full bg-dark-900/60 backdrop-blur-md text-white/90 text-xs font-medium border border-white/10">Tailwind CSS</span>
+                                            <span class="px-3 py-1 rounded-full bg-dark-900/60 backdrop-blur-md text-white/90 text-xs font-medium border border-white/10">Supabase</span>
+                                            <span class="px-3 py-1 rounded-full bg-dark-900/60 backdrop-blur-md text-slate-300 text-xs font-medium border border-white/10">HTML/CSS</span>
+                                        </div>
+                                        <h3 class="font-display text-3xl md:text-4xl font-bold text-white mb-3 group-hover:text-[#FA538C] transition-colors">Streaming Monkey</h3>
+                                        <p class="text-slate-300 max-w-lg mb-6 opacity-80 group-hover:opacity-100 transform group-hover:-translate-y-1 transition-all duration-500">
+                                            Plataforma de venta de cuentas de streaming rentables. Todo el entretenimiento en la palma de tu mano con acceso inmediato, seguro y al mejor precio.
+                                        </p>
+                                        <div class="inline-flex items-center gap-2 text-white font-medium w-max opacity-80 group-hover:opacity-100 transition-opacity duration-500 delay-100 group-hover:text-[#FA538C]">
+                                            Ver Plataforma Web <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <!-- Project 2 (Panadería Artesanal) -->
+                                <a href="https://panaderia-artesanal.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                    class="block touch-target group relative rounded-2xl md:rounded-3xl overflow-hidden bg-dark-800 border border-white/10 hover:border-[#D4A373]/40 transition-colors reveal cursor-pointer shadow-[0_4px_30px_rgba(0,0,0,0.5)] flex flex-col justify-end min-h-[320px]">
+                                    <img src="./panaderia.png"
+                                        class="absolute inset-0 w-full h-full object-cover object-center opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105"
+                                        alt="Panadería Artesanal El Trigo de Oro">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/80 to-transparent"></div>
+                                    <div class="relative z-10 p-6 md:p-8 w-full flex flex-col justify-end">
+                                        <div class="flex flex-wrap gap-2 mb-3">
+                                            <span class="px-2 py-0.5 rounded border border-[#D4A373]/30 bg-[#D4A373]/10 text-[#D4A373] text-[10px] font-medium tracking-wide">React</span>
+                                            <span class="px-2 py-0.5 rounded border border-[#D4A373]/30 bg-[#D4A373]/10 text-[#D4A373] text-[10px] font-medium tracking-wide">Tailwind CSS</span>
+                                        </div>
+                                        <h3 class="font-display text-2xl font-bold text-white mb-2 group-hover:text-[#D4A373] transition-colors">Panadería Artesanal</h3>
+                                        <p class="text-slate-300 text-sm leading-relaxed transition-all duration-500">
+                                            Landing page cálida y moderna para panadería. Diseño responsivo enfocado en la presentación de productos.
+                                        </p>
+                                    </div>
+                                </a>
+
+                                <!-- Project 3 (Sistema de Inventario) -->
+                                <a href="https://sistema-de-inventario-psi.vercel.app/login" target="_blank" rel="noopener noreferrer"
+                                    class="block touch-target group relative rounded-2xl md:rounded-3xl overflow-hidden bg-dark-800 border border-white/10 hover:border-accent-cyan/40 transition-colors reveal cursor-pointer shadow-[0_4px_30px_rgba(0,0,0,0.5)] flex flex-col justify-end min-h-[320px]">
+                                    <img src="./inventario.png"
+                                        class="absolute inset-0 w-full h-full object-cover object-center opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105"
+                                        alt="Sistema de Inventario">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/80 to-transparent"></div>
+                                    <div class="relative z-10 p-6 md:p-8 w-full flex flex-col justify-end">
+                                        <div class="flex flex-wrap gap-2 mb-3">
+                                            <span class="px-2 py-0.5 rounded border border-accent-cyan/30 bg-accent-cyan/10 text-accent-cyan text-[10px] font-medium tracking-wide">Next.js</span>
+                                            <span class="px-2 py-0.5 rounded border border-accent-cyan/30 bg-accent-cyan/10 text-accent-cyan text-[10px] font-medium tracking-wide">Tailwind CSS</span>
+                                        </div>
+                                        <h3 class="font-display text-2xl font-bold text-white mb-2 group-hover:text-accent-cyan transition-colors">Sistema de Inventario</h3>
+                                        <p class="text-slate-300 text-sm leading-relaxed transition-all duration-500">
+                                            Gestión integral de stock con dashboard administrativo y analíticas logísticas avanzadas.
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
-                        <h3
-                            class="font-display text-3xl md:text-4xl font-bold text-white mb-3 group-hover:text-[#FA538C] transition-colors">
-                            Streaming Monkey</h3>
-                        <p
-                            class="text-slate-300 max-w-lg mb-6 opacity-80 group-hover:opacity-100 transform group-hover:-translate-y-1 transition-all duration-500">
-                            Plataforma de venta de cuentas de streaming rentables. Todo el entretenimiento en la palma
-                            de tu mano con acceso inmediato, seguro y al mejor precio.
-                        </p>
-                        <div
-                            class="inline-flex items-center gap-2 text-white font-medium w-max opacity-80 group-hover:opacity-100 transition-opacity duration-500 delay-100 group-hover:text-[#FA538C]">
-                            Ver Plataforma Web <svg class="w-5 h-5" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                </path>
-                            </svg>
+
+                        <!-- Block 2: New Project 4 (Transcriptor IA) -->
+                        <div class="flex-none w-[320px] md:w-[600px] lg:w-[800px] snap-start">
+                            <a href="https://github.com/MarceloEscobal" target="_blank" rel="noopener noreferrer"
+                                class="block touch-target group relative h-full rounded-2xl md:rounded-3xl overflow-hidden bg-dark-800 border border-white/10 hover:border-green-500/40 transition-colors reveal cursor-pointer shadow-[0_4px_30px_rgba(0,0,0,0.5)] flex flex-col justify-end">
+                                <img src="./transcriptor.png"
+                                    class="absolute inset-0 w-full h-full object-cover object-center opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105"
+                                    alt="Transcriptor IA">
+                                <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/80 to-transparent"></div>
+                                <div class="relative z-10 p-8 md:p-12 w-full flex flex-col justify-end">
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="px-3 py-1 rounded-full bg-dark-900/60 backdrop-blur-md text-green-400 text-xs font-medium border border-green-500/20">Python</span>
+                                        <span class="px-3 py-1 rounded-full bg-dark-900/60 backdrop-blur-md text-green-400 text-xs font-medium border border-green-500/20">AI Models</span>
+                                    </div>
+                                    <h3 class="font-display text-3xl md:text-4xl font-bold text-white mb-3 group-hover:text-green-500 transition-colors">Transcriptor IA</h3>
+                                    <p class="text-slate-300 max-w-xl text-base leading-relaxed opacity-80 transition-all duration-500">
+                                        Aplicación de escritorio inteligente para transcripción automática de audio con reconocimiento de múltiples locutores.
+                                    </p>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                </a>
+                </div>
 
-                <!-- Project 2 (Panadería Artesanal) -->
-                <a href="https://panaderia-artesanal.vercel.app/" target="_blank" rel="noopener noreferrer"
-                    class="block touch-target group relative rounded-2xl md:rounded-3xl overflow-hidden bg-dark-800 border border-white/10 hover:border-[#D4A373]/40 transition-colors reveal cursor-pointer shadow-[0_4px_30px_rgba(0,0,0,0.5)] flex flex-col justify-end min-h-[320px]">
-                    <img src="./panaderia.png"
-                        class="absolute inset-0 w-full h-full object-cover object-center opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105"
-                        alt="Panadería Artesanal El Trigo de Oro">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/80 to-transparent"></div>
-                    <div class="relative z-10 p-6 md:p-8 w-full flex flex-col justify-end">
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            <span
-                                class="px-2 py-0.5 rounded border border-[#D4A373]/30 bg-[#D4A373]/10 text-[#D4A373] text-[10px] font-medium tracking-wide">React</span>
-                            <span
-                                class="px-2 py-0.5 rounded border border-[#D4A373]/30 bg-[#D4A373]/10 text-[#D4A373] text-[10px] font-medium tracking-wide">Tailwind
-                                CSS</span>
-                        </div>
-                        <h3
-                            class="font-display text-2xl font-bold text-white mb-2 group-hover:text-[#D4A373] transition-colors">
-                            Panadería Artesanal</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed transition-all duration-500">
-                            Landing page cálida y moderna para panadería. Diseño responsivo enfocado en la presentación
-                            de productos.
-                        </p>
-                    </div>
-                </a>
+                <!-- Custom Interactive Scrollbar with Arrows -->
+                <div class="mt-4 flex justify-center items-center gap-6">
 
-                <!-- Project 3 (Sistema de Inventario) -->
-                <a href="https://sistema-de-inventario-psi.vercel.app/login" target="_blank" rel="noopener noreferrer"
-                    class="block touch-target group relative rounded-2xl md:rounded-3xl overflow-hidden bg-dark-800 border border-white/10 hover:border-accent-cyan/40 transition-colors reveal cursor-pointer shadow-[0_4px_30px_rgba(0,0,0,0.5)] flex flex-col justify-end min-h-[320px]">
-                    <img src="./inventario.png"
-                        class="absolute inset-0 w-full h-full object-cover object-center opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105"
-                        alt="Sistema de Inventario">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/80 to-transparent"></div>
-                    <div class="relative z-10 p-6 md:p-8 w-full flex flex-col justify-end">
-                        <div class="flex flex-wrap gap-2 mb-3">
-                            <span
-                                class="px-2 py-0.5 rounded border border-accent-cyan/30 bg-accent-cyan/10 text-accent-cyan text-[10px] font-medium tracking-wide">Next.js</span>
-                            <span
-                                class="px-2 py-0.5 rounded border border-accent-cyan/30 bg-accent-cyan/10 text-accent-cyan text-[10px] font-medium tracking-wide">Tailwind
-                                CSS</span>
-                        </div>
-                        <h3
-                            class="font-display text-2xl font-bold text-white mb-2 group-hover:text-accent-cyan transition-colors">
-                            Sistema de Inventario</h3>
-                            Gestión integral de stock con dashboard administrativo y analíticas logísticas avanzadas.
-                        </p>
+                    <!-- Left Arrow -->
+                    <button id="scroll-left" class="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-accent-cyan transition-all duration-300 group/btn shadow-lg border border-white/5">
+                        <svg class="w-5 h-5 transform group-hover/btn:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+
+                    <!-- Track -->
+                    <div id="scroll-track" class="relative w-64 h-2 bg-white/10 rounded-full cursor-pointer hover:bg-white/15 transition-colors group/track">
+                        <div id="scroll-indicator" class="absolute top-0 left-0 h-full w-20 bg-accent-cyan rounded-full transition-all duration-300 ease-out shadow-[0_0_15px_rgba(6,182,212,0.6)] cursor-grab active:cursor-grabbing border border-white/20"></div>
                     </div>
-                </a>
+
+                    <!-- Right Arrow -->
+                    <button id="scroll-right" class="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-accent-cyan transition-all duration-300 group/btn shadow-lg border border-white/5">
+                        <svg class="w-5 h-5 transform group-hover/btn:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+
+
             </div>
         </section>
 
